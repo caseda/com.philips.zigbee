@@ -1,0 +1,141 @@
+{
+  "id": "com.philips.zigbee",
+  "name": {
+    "en": "Philips Hue Zigbee"
+  },
+  "description": {
+    "en": "Philips Hue Zigbee devices for Homey",
+    "nl": "Philips Hue Zigbee apparaten voor Homey"
+  },
+  "category": [
+    "lights"
+  ],
+  "version": "1.0.0",
+  "compatibility": ">=1.4.0",
+  "author": {
+    "name": "Remco Mengers",
+    "email": "caseda08@hotmail.com"
+  },
+  "images": {
+    "large": "/assets/images/large.png",
+    "small": "/assets/images/small.png"
+  },
+  "drivers": [
+    {
+      "id": "dimmer_switch",
+      "name": {
+        "en": "Dimmer Switch"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_battery"
+      ],
+      "zigbee": {
+        "manufacturerName": "Philips",
+        "productId": [
+          "RWL021"
+        ],
+        "deviceId": 2080,
+        "profileId": 49246,
+        "learnmode": {
+          "image": "/drivers/dimmer_switch/assets/icon.svg",
+          "instruction": {
+            "en": "Hold the pair button on the back for at least 10 seconds until the LED is green.",
+            "nl": "Houdt de koppel knop op de achterkant voor tenminste 10 seconden ingedrukt tot de LED groen is."
+          }
+        }
+      },
+      "images": {
+        "large": "/drivers/dimmer_switch/assets/images/large.jpg",
+        "small": "/drivers/dimmer_switch/assets/images/small.jpg"
+      }
+    }
+  ],
+  "flow": {
+    "triggers": [
+      {
+        "id": "hue_dimmer_on",
+        "title": {
+          "en": "Pressed on button",
+          "nl": "Aan knop ingedrukt"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=dimmer_switch"
+          }
+        ]
+      },
+      {
+        "id": "hue_dimmer_off",
+        "title": {
+          "en": "Pressed off button",
+          "nl": "Uit knop ingedrukt"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=dimmer_switch"
+          }
+        ]
+      },
+      {
+        "id": "hue_dimmer_dim",
+        "title": {
+          "en": "Dim buttons",
+          "nl": "Dim knoppen"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=dimmer_switch"
+          },
+          {
+            "name": "direction",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "press-up",
+                "label": {
+                  "en": "Pressed dim up",
+                  "nl": "Omhoog dimmen gedrukt"
+                }
+              },
+              {
+                "id": "press-down",
+                "label": {
+                  "en": "Pressed dim down",
+                  "nl": "Omlaag dimmen gedrukt"
+                }
+              },
+              {
+                "id": "hold-up",
+                "label": {
+                  "en": "Hold dim up",
+                  "nl": "Omhoog dimmen inhouden"
+                }
+              },
+              {
+                "id": "hold-down",
+                "label": {
+                  "en": "Hold dim down",
+                  "nl": "Omlaag dimmen inhouden"
+                }
+              },
+              {
+                "id": "hold-stop",
+                "label": {
+                  "en": "Release hold",
+                  "nl": "Inhouden gestopt"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

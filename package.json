@@ -1,0 +1,22 @@
+{
+  "name": "com.philips.zigbee",
+  "version": "1.0.0",
+  "description": "This app adds support for Philips Zigbee devices in Homey",
+  "main": "app.js",
+  "dependencies": {
+    "homey-zigbeedriver": "git+https://github.com/athombv/node-homey-zigbeedriver.git",
+    "tinycolor2": "^1.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "run": "homeyConfig compose && athom project --run",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caseda/com.philips.zigbee"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://github.com/caseda/com.philips.zigbee"
+}

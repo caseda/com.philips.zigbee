@@ -1,0 +1,89 @@
+[
+	{
+		"id": "hue_dimmer_on",
+		"title": {
+			"en": "Pressed on button",
+			"nl": "Aan knop ingedrukt"
+		},
+		"args": [
+			{
+				"name": "device",
+				"type": "device",
+				"filter": "driver_id=dimmer_switch"
+			}
+		]
+	},
+	{
+		"id": "hue_dimmer_off",
+		"title": {
+			"en": "Pressed off button",
+			"nl": "Uit knop ingedrukt"
+		},
+		"args": [
+			{
+				"name": "device",
+				"type": "device",
+				"filter": "driver_id=dimmer_switch"
+			}
+		]
+	},
+	{
+		"id": "hue_dimmer_dim",
+		"title": {
+			"en": "Dim buttons",
+			"nl": "Dim knoppen"
+		},
+		"hint": {
+			"en": "The hold button will first trigger an \"Pressed dim up/down\", after that trigger every 0.45 seconds.",
+			"nl": "De knop inhouden zal eerst een \"Omhoog/laag dimmen grdrukt\" activeren, daarna zal hij elke 0.45 seconden activeren."
+		},
+		"args": [
+			{
+				"name": "device",
+				"type": "device",
+				"filter": "driver_id=dimmer_switch"
+			},
+			{
+				"name": "direction",
+				"type": "dropdown",
+				"values": [
+					{
+						"id": "press-up",
+						"label": {
+							"en": "Pressed dim up",
+							"nl": "Omhoog dimmen gedrukt"
+						}
+					},
+					{
+						"id": "press-down",
+						"label": {
+							"en": "Pressed dim down",
+							"nl": "Omlaag dimmen gedrukt"
+						}
+					},
+					{
+						"id": "hold-up",
+						"label": {
+							"en": "Hold dim up",
+							"nl": "Omhoog dimmen inhouden"
+						}
+					},
+					{
+						"id": "hold-down",
+						"label": {
+							"en": "Hold dim down",
+							"nl": "Omlaag dimmen inhouden"
+						}
+					},
+					{
+						"id": "hold-stop",
+						"label": {
+							"en": "Release hold",
+							"nl": "Inhouden gestopt"
+						}
+					}
+				]
+			}
+		]
+	}
+]

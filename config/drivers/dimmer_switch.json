@@ -1,0 +1,29 @@
+{
+  "id": "dimmer_switch",
+  "name": {
+    "en": "Dimmer Switch"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_battery"
+  ],
+  "zigbee": {
+    "manufacturerName": "Philips",
+    "productId": [
+      "RWL021"
+    ],
+    "deviceId": 2080,
+    "profileId": 49246,
+    "learnmode": {
+      "image": "/drivers/dimmer_switch/assets/icon.svg",
+      "instruction": {
+        "en": "Hold the pair button on the back for at least 10 seconds until the LED is green.",
+        "nl": "Houdt de koppel knop op de achterkant voor tenminste 10 seconden ingedrukt tot de LED groen is."
+      }
+    }
+  },
+  "images": {
+    "large": "/drivers/dimmer_switch/assets/images/large.jpg",
+    "small": "/drivers/dimmer_switch/assets/images/small.jpg"
+  }
+}
